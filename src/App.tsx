@@ -17,7 +17,7 @@ function App() {
   function addTodo (title: string) {
     setTodos((prevTodos) => [
       {
-        id: prevTodos.length + 1,
+        id: Math.max(...prevTodos.map((todo) => todo.id), 0) + 1,
         title,
         completed: false
       },
